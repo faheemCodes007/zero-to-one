@@ -1,0 +1,134 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Josefin";
+    src: url("/fonts/heading-font.ttf") format("truetype")
+}
+@font-face {
+    font-family: "RobotoSlab";
+    src: url("/fonts/RobotoSlabRegular.ttf") format("truetype")
+}
+@font-face {
+    font-family: "Oregon";
+    src: url("/fonts/Oregon.ttf") format("truetype")
+}
+
+body,html {
+    background-color: white;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFC017;
+    padding: 0rem 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+nav .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.logo-container > img {
+    height: 34px;
+    width: 34px;
+    vertical-align: middle;
+}
+.logo-container > p {
+    font-family: "Josefin";
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+nav > .side-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+}
+.side-links > a {
+    text-decoration:none;
+    color: black;
+    font-family: "Roboto";
+    text-transform: uppercase;
+}
+.side-links > a:last-of-type {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: .6rem 1rem;
+}
+.side-links > a:visited {
+    color: white;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+}
+.app > div.banner {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFC017;
+    align-items: center;
+}
+.app > div.banner > .left {
+    width: 50%;
+    font-family: "RobotoSlab";
+    padding: 2rem;
+}
+.app > .banner > .left > h1 {
+    font-size: 3rem;
+
+}
+.app > .banner > .left > a {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: .7rem 2rem;
+    text-decoration: none;
+}
+.app > div.banner > .right {
+    flex-grow: 1;
+}
+.app > .featured-header {
+    font-family: "Roboto";
+}
+.featured-container {
+    font-family: "Roboto";
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.featured-container > .article-container > a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.featured-container > .article-container > a > img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+.featured-container .info-container {
+    display: flex;
+    flex-direction: column;
+}
+.featured-container .info-container > h1 {
+    margin-bottom: 0;
+}
+.featured-container .info-container p {
+    width: 70%;
+}

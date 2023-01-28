@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Josefin";
+    src: url("/fonts/heading-font.ttf") format("truetype")
+}
+@font-face {
+    font-family: "RobotoSlab";
+    src: url("/fonts/RobotoSlabRegular.ttf") format("truetype")
+}
+@font-face {
+    font-family: "Oregon";
+    src: url("/fonts/Oregon.ttf") format("truetype")
+}
+:root {
+    --content-text-color: rgba(41, 41, 41, 1)
+}
+
+body,html {
+    background-color: white;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFC017;
+    padding: 0rem 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+nav .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.logo-container > img {
+    height: 34px;
+    width: 34px;
+    vertical-align: middle;
+}
+.logo-container > p {
+    font-family: "Josefin";
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+}
+nav > .side-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+}
+.side-links > a {
+    text-decoration:none;
+    color: black;
+    font-family: "Roboto";
+    text-transform: uppercase;
+}
+.side-links > a:last-of-type {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: .6rem 1rem;
+}
+.side-links > a:visited {
+    color: white;
+}
+.app {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    font-family: "Roboto";
+}
+.app > .left {
+    width: 75%;
+}
+.app > .right {
+    flex-grow: 1;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    padding: 7px;
+    height: min-content;
+}
+.app > .right > .article-info img {
+    height: 88px;
+    width: 88px;
+    object-fit: cover;
+}
+.app > .left .article-thumbnail > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.app > .left .article-container h1 {
+    font-family: "RobotoSlab";
+    font-size: 2.5rem;
+}
+.app > .left > .article-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.app > .left > .article-container p.article-image-alt {
+    text-align: center;
+}
+.app > .left .article-container > .article-content > p {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 32px;
+    font-size: 25px;
+    font-weight: 400;
+    word-break: break-word;
+    color: var(--content-text-color);
+}
+.app > .right > .misc-info {
+    font-family: "Roboto";
+    display: flex;
+    flex-direction: row;
+}
+.app > .right > .misc-info > a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    font-size: 15px;
+    margin:0  2px;
+}
+.app > .right > .misc-info > a::after {
+    content: '-';
+}
