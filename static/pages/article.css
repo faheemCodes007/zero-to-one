@@ -4,21 +4,22 @@
 }
 @font-face {
     font-family: "Josefin";
-    src: url("/fonts/heading-font.ttf") format("truetype")
+    src: url("/fonts/heading-font.ttf") format("truetype");
 }
 @font-face {
     font-family: "RobotoSlab";
-    src: url("/fonts/RobotoSlabRegular.ttf") format("truetype")
+    src: url("/fonts/RobotoSlabRegular.ttf") format("truetype");
 }
 @font-face {
     font-family: "Oregon";
-    src: url("/fonts/Oregon.ttf") format("truetype")
+    src: url("/fonts/Oregon.ttf") format("truetype");
 }
 :root {
-    --content-text-color: rgba(41, 41, 41, 1)
+    --content-text-color: rgba(41, 41, 41, 1);
 }
 
-body,html {
+body,
+html {
     background-color: white;
     margin: 0;
 }
@@ -31,8 +32,8 @@ a {
 nav {
     display: flex;
     flex-direction: row;
-    background-color: #FFC017;
-    padding: 0rem 1rem;
+    background-color: #ffc017;
+    padding: 0rem 2rem;
     justify-content: space-between;
     border-bottom: 1px solid black;
 }
@@ -48,7 +49,8 @@ nav .logo-container {
     vertical-align: middle;
 }
 .logo-container > p {
-    font-family: "Josefin";
+    font-family: "RobotoSlab";
+    font-weight: bolder;
     font-size: 2rem;
     text-decoration: none;
     color: black;
@@ -60,19 +62,24 @@ nav > .side-links {
     gap: 35px;
 }
 .side-links > a {
-    text-decoration:none;
+    text-decoration: none;
     color: black;
-    font-family: "Roboto";
+    font-family: "RobotoSlab";
     text-transform: uppercase;
+    font-weight: bolder;
 }
 .side-links > a:last-of-type {
     background-color: black;
     color: white;
     border-radius: 20px;
-    padding: .6rem 1rem;
+    padding: 0.6rem 1rem;
+    letter-spacing: 1px;
+}
+.side-links > a:last-of-type:visited {
+    color: white;
 }
 .side-links > a:visited {
-    color: white;
+    color: black;
 }
 .app {
     display: flex;
@@ -89,6 +96,8 @@ nav > .side-links {
     border-radius: 1rem;
     padding: 7px;
     height: min-content;
+    position: sticky;
+    top: 15px;
 }
 .app > .right > .article-info img {
     height: 88px;
@@ -113,7 +122,7 @@ nav > .side-links {
     text-align: center;
 }
 .app > .left .article-container > .article-content > p {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     line-height: 32px;
     font-size: 25px;
     font-weight: 400;
@@ -124,13 +133,26 @@ nav > .side-links {
     font-family: "Roboto";
     display: flex;
     flex-direction: row;
+    max-width: max-content;
 }
 .app > .right > .misc-info > a {
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
     font-size: 15px;
-    margin:0  2px;
+    white-space: nowrap;
+}
+.app > .right > .misc-info > a:hover {
+    color: black;
 }
 .app > .right > .misc-info > a::after {
-    content: '-';
+    content: "•";
+    margin: 0 5px;
+}
+
+.app > .right > .misc-info > a:last-of-type:after {
+    content: "";
+}
+.horizontal-divider {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 0rem 0 1rem;
 }
