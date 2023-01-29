@@ -4,18 +4,19 @@
 }
 @font-face {
     font-family: "Josefin";
-    src: url("/fonts/heading-font.ttf") format("truetype")
+    src: url("/fonts/heading-font.ttf") format("truetype");
 }
 @font-face {
     font-family: "RobotoSlab";
-    src: url("/fonts/RobotoSlabRegular.ttf") format("truetype")
+    src: url("/fonts/RobotoSlabRegular.ttf") format("truetype");
 }
 @font-face {
     font-family: "Oregon";
-    src: url("/fonts/Oregon.ttf") format("truetype")
+    src: url("/fonts/Oregon.ttf") format("truetype");
 }
 
-body,html {
+body,
+html {
     background-color: white;
     margin: 0;
 }
@@ -29,7 +30,7 @@ a {
 nav {
     display: flex;
     flex-direction: row;
-    background-color: #FFC017;
+    background-color: #ffc017;
     padding: 0rem 1rem;
     justify-content: space-between;
     border-bottom: 1px solid black;
@@ -58,7 +59,7 @@ nav > .side-links {
     gap: 35px;
 }
 .side-links > a {
-    text-decoration:none;
+    text-decoration: none;
     color: black;
     font-family: "Roboto";
     text-transform: uppercase;
@@ -67,10 +68,10 @@ nav > .side-links {
     background-color: black;
     color: white;
     border-radius: 20px;
-    padding: .6rem 1rem;
+    padding: 0.6rem 1rem;
 }
 .side-links > a:visited {
-    color: white;
+    color: black;
 }
 .app {
     display: flex;
@@ -79,7 +80,7 @@ nav > .side-links {
 .app > div.banner {
     display: flex;
     flex-direction: row;
-    background-color: #FFC017;
+    background-color: #ffc017;
     align-items: center;
 }
 .app > div.banner > .left {
@@ -89,13 +90,12 @@ nav > .side-links {
 }
 .app > .banner > .left > h1 {
     font-size: 3rem;
-
 }
 .app > .banner > .left > a {
     background-color: black;
     color: white;
     border-radius: 20px;
-    padding: .7rem 2rem;
+    padding: 0.7rem 2rem;
     text-decoration: none;
 }
 .app > div.banner > .right {
