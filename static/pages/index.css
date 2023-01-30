@@ -49,6 +49,7 @@ nav {
     position: fixed;
     width: 100%;
     transition: all 250ms ease-in-out;
+    z-index: 10;
 }
 nav[whiteBackground="true"] {
     background-color: white;
@@ -164,6 +165,10 @@ div.nav-space#navSpace {
     width: 200px;
     object-fit: cover;
 }
+.featured-container  .info-container > p.author {
+    margin-bottom: 0;
+    color: rgba(0, 0, 0, 0.7);
+}
 .featured-container .info-container {
     display: flex;
     flex-direction: column;
@@ -174,6 +179,17 @@ div.nav-space#navSpace {
 .featured-container .info-container p {
     width: 70%;
 }
+.categories-container > .all-categories-link {
+    border-bottom: 1px solid #ffc017;
+    max-width: max-content;
+}
+.categories-container > .all-categories-link > a {
+    font-weight: bold;
+    max-width: max-content;
+}
+.categories-container > .all-categories-link > a > i {
+    vertical-align: middle;
+}
 .categories-container {
     display: flex;
     flex-direction: column;
@@ -183,6 +199,7 @@ div.nav-space#navSpace {
     padding: 1rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    row-gap: 1rem;
 }
 .categories-container > .categories > a {
     position: relative;

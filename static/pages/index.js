@@ -21,6 +21,7 @@ document.body.onload = async () => {
                 <h1>
                     ${article.title}
                 </h1>
+                <p class="author">${article.author}</p>
                 <p>
                 ${article.description}
                 </p>

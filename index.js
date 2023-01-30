@@ -3,6 +3,11 @@ const app = express();
 const http = require("http").createServer(app);
 const Article = require("./model/article");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt")
+const cookieParser = require("cookie-parser")
+const bodyParser = require("body-parser")
+const crypto = require("crypto")
+const User = require("./model/user")
 
 mongoose.connect("mongodb://127.0.0.1:27017/articles");
 mongoose.connection.on("open", () => {
@@ -10,8 +15,13 @@ mongoose.connection.on("open", () => {
 });
 
 const PORT = process.env.PORT || 3000;
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(cookieParser())
 
 app.use(express.static(__dirname + "/static/"));
+
+let validatedSessions = {}
 
 app.get("/article", async (req, res) => {
     let article = new Article({
@@ -72,6 +82,39 @@ app.get("/getArticle", (req, res) => {
 app.get("/", (req, res) => {
     res.status(200).sendFile(__dirname + "/static/pages/index.html");
 });
+app.get("/signIn", (req, res) => {
+    res.status(200).sendFile(__dirname + "/static/pages/signIn.html") 
+})
+app.post("/session", (req, res) => {
+    let referrer = req.query.referrer
+    console.log(req.body)
+    User.findOne({email: req.body.email}).exec().then(doc => {
+        if (bcrypt.compareSync(req.body.password, doc.password)) {
+            let cookie = crypto.randomBytes(32)
+            res.cookie("session", cookie)
+            validatedSessions[req.body.email] = cookie
+            res.status(200).redirect(referrer)
+            return
+        }
+        res.status(401).send({message: "Invalid"})
+        return
+    })
+})
+// app.get("/register", (req, res) => {
+//     let salt = bcrypt.genSaltSync()
+//     let hash = bcrypt.hashSync("Faheem_007", salt)
+//     let user = new User({
+//         name: "Muhammad Faheem",
+//         email: "admin@zerotoone.com",
+//         password: hash,
+//     })
+//     user.save().then(doc => {
+//         console.log(doc)
+//         res.status(200).send(doc)
+//     }).catch(err => {
+//         res.status(500).send({error: err})
+//     })
+// })
 app.use((req, res) => {
     res.status(404).sendFile(__dirname + "/static/pages/pageNotFound.html");
 });
