@@ -4,6 +4,7 @@ const FEATUREDARTICLES = document.querySelector(
 const MAINBANNERBUTTON = document.querySelector("a#mainBannerButton");
 const BANNER = document.querySelector("body > div.app > div.banner");
 const NAV = document.querySelector("body > nav");
+const AUTHLINK = document.querySelector("body > nav > div > a:nth-child(3)");
 
 document.body.onload = async () => {
     console.log("Here");
@@ -29,6 +30,15 @@ document.body.onload = async () => {
         </a>
     </div>
     `;
+    }
+    let isSignedIn = await fetch("/isSignedIn", {
+        credentials: "include",
+        method: "POST",
+    });
+    let user = await isSignedIn.json();
+    if (isSignedIn.status === 200) {
+        AUTHLINK.textContent = "Log Out";
+        AUTHLINK.setAttribute("href", "/signOut?referrer=/");
     }
 };
 

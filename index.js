@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const randomBytes = require("crypto").randomBytes;
 const USER = require("./model/user");
+const morgan = require("morgan");
 
 mongoose.connect("mongodb://127.0.0.1:27017/articles");
 mongoose.connection.on("open", () => {
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(express.static(__dirname + "/static/"));
+app.use(morgan("dev"));
 
 let validatedSessions = {};
 
@@ -132,6 +134,20 @@ app.post("/session", async (req, res) => {
 //         res.status(500).send({error: err})
 //     })
 // })
+app.get("/signOut", (req, res) => {
+    res.clearCookie("session");
+    res.status(200).redirect(req.query.referrer);
+});
+app.post("/isSignedIn", async (req, res) => {
+    // await sleep(2000); // I wanna see that loading animation for a while. ;-)
+    let session = req.cookies["session"];
+    // console.log(!!validatedSessions[session]);
+    if (!validatedSessions[session]) {
+        res.status(404).send({ message: "User not signed in." });
+        return;
+    }
+    res.status(200).send(validatedSessions[session]);
+});
 app.use((req, res) => {
     res.status(404).sendFile(__dirname + "/static/pages/pageNotFound.html");
 });
