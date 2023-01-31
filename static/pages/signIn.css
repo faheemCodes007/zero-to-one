@@ -2,10 +2,11 @@
     font-family: "RobotoSlab";
     src: url("/fonts/RobotoSlabRegular.ttf") format("truetype");
 }
-body, html {
+body,
+html {
     margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.7);
     height: 100vh;
+    background-color: #0d1117;
 }
 .app {
     height: 100%;
@@ -15,16 +16,34 @@ body, html {
     justify-content: center;
 }
 
-.form-container  > form{
+.form-container > form {
     background-color: rgb(11, 15, 12);
     border-radius: 7px;
     display: flex;
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
-    background-color: gray;
+    background-color: #161b22;
+    border: 1px solid #21262d;
 }
 .form-container > form > label {
     color: white;
     font-family: "RobotoSlab";
+}
+.form-container > form > input {
+    outline: none;
+    border: none;
+    padding: 0.5rem 0.2rem;
+}
+.form-container > form > button[type="submit"] {
+    background-color: #ffc017;
+    color: black;
+    padding: 0.5rem 1.5rem;
+    max-width: max-content;
+    border: none;
+    border-radius: 15px;
+    align-self: center;
+    cursor: pointer;
+    font-family: "RobotoSlab";
+    font-weight: bolder;
 }

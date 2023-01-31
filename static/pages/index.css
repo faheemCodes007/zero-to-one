@@ -129,6 +129,7 @@ div.nav-space#navSpace {
     border-radius: 20px;
     padding: 0.7rem 2rem;
     text-decoration: none;
+    user-select: none;
 }
 .app > div.banner > .right {
     flex-grow: 1;
@@ -165,7 +166,7 @@ div.nav-space#navSpace {
     width: 200px;
     object-fit: cover;
 }
-.featured-container  .info-container > p.author {
+.featured-container .info-container > p.author {
     margin-bottom: 0;
     color: rgba(0, 0, 0, 0.7);
 }
