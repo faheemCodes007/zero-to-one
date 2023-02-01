@@ -4,10 +4,10 @@ const FEATUREDARTICLES = document.querySelector(
 const MAINBANNERBUTTON = document.querySelector("a#mainBannerButton");
 const BANNER = document.querySelector("body > div.app > div.banner");
 const NAV = document.querySelector("body > nav");
-const AUTHLINK = document.querySelector("body > nav > div > a:nth-child(3)");
+const AUTHLINK = document.querySelector("body > nav > div > a:nth-child(4)");
+const LOADER = document.querySelector("#circularLoader")
 
 document.body.onload = async () => {
-    console.log("Here");
     let articles = await fetch("/getAllArticles");
     let json = await articles.json();
     for (let article of json) {
@@ -39,13 +39,16 @@ document.body.onload = async () => {
     if (isSignedIn.status === 200) {
         AUTHLINK.textContent = "Log Out";
         AUTHLINK.setAttribute("href", "/signOut?referrer=/");
+        LOADER.style.display = "none"
+    } else {
+        AUTHLINK.textContent = "Sign In"
+        AUTHLINK.setAttribute("href", "/signIn?referrer=/")
+        LOADER.style.display = 'none'
     }
 };
 
 document.body.onscroll = (ev) => {
     let height = BANNER.clientHeight;
-    console.log(window.scrollY);
-    // console.log(window.s)
     if (window.scrollY >= height) {
         NAV.setAttribute("whiteBackground", "true");
         return;

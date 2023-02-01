@@ -233,3 +233,22 @@ div.nav-space#navSpace {
     font-family: "RobotoSlab";
     text-transform: uppercase;
 }
+#circularLoader {
+    border-top: 2px solid green;
+    border-bottom: 2px solid  red;
+    border-left: 2px solid blue;
+    border-right: 2px solid white;
+    height: 50px;
+    border-radius: 50px;
+    width: 50px;
+    animation: round 1000ms linear infinite;
+}
+@keyframes round {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    
+}
