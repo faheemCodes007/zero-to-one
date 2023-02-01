@@ -40,4 +40,17 @@ nav > .misc-container > button {
     border-radius: 7px;
     font-family: "RobotoSlab";
     font-weight: bolder;
+    font-size: 1.1rem;
+}
+div.app {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5.5rem;
+}
+.app > .input-container.title-container > input {
+    font-size: 1.5rem;
+    outline: none;
+}
+.app > .input-container.title-container > input::before {
+    content: "Title";
 }
