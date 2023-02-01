@@ -85,16 +85,17 @@ app.get("/", (req, res) => {
     res.status(200).sendFile(__dirname + "/static/pages/index.html");
 });
 app.get("/signIn", (req, res) => {
-    let referer = req.query.referer || "/";
+    let referer = req.query.referrer || "/";
     let session = req.cookies["session"];
     if (validatedSessions[session]) {
-        res.status(200).redirect(referer);
+        res.status(200).redirect(`/${referer}`);
         return;
     }
     res.status(200).sendFile(__dirname + "/static/pages/signIn.html");
 });
 app.post("/session", async (req, res) => {
-    let referer = req.query.callback || "/";
+     console.log(req.query)
+    let referer = req.query.referrer || "/";
     var user = await USER.find({ email: req.body.email })
         .select(" -createdAt -__v")
         .exec();
@@ -103,6 +104,7 @@ app.post("/session", async (req, res) => {
             message: "No account was associated with this email.",
         });
         return;
+
     }
     user = user[0];
     try {
@@ -148,6 +150,15 @@ app.post("/isSignedIn", async (req, res) => {
     }
     res.status(200).send(validatedSessions[session]);
 });
+app.get("/write", (req, res) => {
+    let referer = req.query.referer || "/";
+    let session = req.cookies["session"];
+    if (validatedSessions[session]) {
+        res.status(200).sendFile(__dirname + "/static/pages/writeArticle.html")
+        return;
+    }
+    res.redirect("/signIn?referrer=write")
+})
 app.use((req, res) => {
     res.status(404).sendFile(__dirname + "/static/pages/pageNotFound.html");
 });

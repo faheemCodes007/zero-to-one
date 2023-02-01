@@ -1,0 +1,43 @@
+body, html {
+    margin: 0;
+    height: 100vh;
+}
+@font-face {
+    font-family: "RobotoSlab";
+    src: url("/fonts/RobotoSlabRegular.ttf") format("truetype");
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem 2rem;
+    justify-content: space-between;
+}
+nav > .logo-container {
+    display: flex;
+    flex-direction: row;
+    font-family: "RobotoSlab";
+    font-weight: bolder;
+    font-size: 1.5rem;
+    gap: .5rem;
+}
+nav > .logo-container > p {
+    margin: 0;
+}
+nav > .logo-container > img {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+nav > .misc-container {
+    display: flex;
+    flex-direction: row;
+}
+nav > .misc-container > button {
+    color: black;
+    background-color: #ffc017;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    border-radius: 7px;
+    font-family: "RobotoSlab";
+    font-weight: bolder;
+}
