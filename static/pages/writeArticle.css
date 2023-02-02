@@ -70,6 +70,10 @@ div.app {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
 }
+.app > .input-container:has(input:placeholder-shown) > p {
+    color: red;
+    opacity: 1;
+}
 .app > .input-container:has(:focus) > p {
     opacity: 1;
 }
