@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write an Article - ZeroToOne</title>
-    <link rel="stylesheet" href="/pages/writeArticle.css">
-    <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-/>
-</head>
-<body>
-    <nav>
-        <div class="logo-container">
-            <img src="/images/logo.png" alt="ZeroToOne Logo">
-            <p>ZeroToOne</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Write an Article - ZeroToOne</title>
+        <link rel="stylesheet" href="/pages/writeArticle.css" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="logo-container">
+                <img src="/images/logo.png" alt="ZeroToOne Logo" />
+                <p>ZeroToOne</p>
+            </div>
+            <div class="misc-container">
+                <button id="publishArticle">Publish</button>
+            </div>
+        </nav>
+        <div class="app">
+            <div class="title-container input-container">
+                <p class="input-title">Title</p>
+                <input
+                    type="text"
+                    name="mainTitle"
+                    id="mainTitle"
+                    placeholder="Why WhatsApp is 'considered' the most secure chatting app."
+                    min="16"
+                    max="32"
+                />
+            </div>
+            <div class="content-container input-container">
+                <p class="input-tile">Content</p>
+                <input
+                    type="text"
+                    name="mainContent"
+                    id="mainContent"
+                    placeholder="Because It's Facebook that's behind."
+                />
+            </div>
         </div>
-        <div class="misc-container">
-            <button id="publishArticle">
-                Publish
-            </button>
-        </div>
-    </nav>
-    <div class="app">
-        <div class="title-container input-container">
-            <input type="text" name="mainTitle" id="mainTitle">
-        </div>
-        <div class="content-container input-container">
-            <input type="text">
-        </div>
-    </div>
-    <script src="/pages/writeArticle.js"></script>
-</body>
+        <script src="/pages/writeArticle.js"></script>
+    </body>
 </html>

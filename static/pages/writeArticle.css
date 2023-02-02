@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     height: 100vh;
 }
@@ -18,7 +19,7 @@ nav > .logo-container {
     font-family: "RobotoSlab";
     font-weight: bolder;
     font-size: 1.5rem;
-    gap: .5rem;
+    gap: 0.5rem;
 }
 nav > .logo-container > p {
     margin: 0;
@@ -47,10 +48,28 @@ div.app {
     flex-direction: column;
     padding: 2rem 5.5rem;
 }
-.app > .input-container.title-container > input {
+.app > .input-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.app > .input-container > p {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.7);
+    border-right: 1px solid rgba(0, 0, 0, 0.7);
+    padding-right: 1rem;
+    width: 13%;
+}
+.app > .input-container > input {
     font-size: 1.5rem;
     outline: none;
+    border: none;
+    width: 100%;
 }
-.app > .input-container.title-container > input::before {
-    content: "Title";
+.app > .input-container > p {
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+.app > .input-container:has(:focus) > p {
+    opacity: 1;
 }
