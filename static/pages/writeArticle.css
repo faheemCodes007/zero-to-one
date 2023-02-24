@@ -3,6 +3,10 @@ html {
     margin: 0;
     height: 100vh;
 }
+body {
+    display: flex;
+    flex-direction: column;
+}
 @font-face {
     font-family: "RobotoSlab";
     src: url("/fonts/RobotoSlabRegular.ttf") format("truetype");
@@ -66,6 +70,11 @@ div.app {
     border: none;
     width: 100%;
 }
+.app > .input-container:last-child > input {
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    padding: 1rem;
+    border-radius: 7px;
+}
 .app > .input-container > p {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
@@ -76,4 +85,39 @@ div.app {
 }
 .app > .input-container:has(:focus) > p {
     opacity: 1;
+}
+.app > .input-container:last-child {
+    display: flex;
+    flex-direction: column;
+}
+.app > .input-container:last-child > p {
+    border: none;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+div.article-preview {
+    display: flex;
+    flex-grow: 1;
+    padding: 2rem 5.5rem;
+}
+body > .content-tools {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    background-color: #ffc017;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    transform: translate(-50%);
+}
+body > .content-tools > i {
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: .5rem;
+    border-radius: 5px;
+}
+body > .content-tools > i:hover {
+    background-color: rgba(200, 200, 200, 0.7);
 }
