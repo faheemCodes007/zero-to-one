@@ -78,6 +78,9 @@ div.app {
 .app > .input-container > p {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
+    color: gray;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 .app > .input-container:has(input:placeholder-shown) > p {
     color: red;
@@ -120,4 +123,31 @@ body > .content-tools > i {
 }
 body > .content-tools > i:hover {
     background-color: rgba(200, 200, 200, 0.7);
+}
+.content-container > p {
+    color: gray;
+    /* opacity: 0; */
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.content-container > .content-preview {
+    padding: 1rem;
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+.content-container > .content-preview > p {
+    color: black;
+    font-size: 1.3rem;
+    outline: none;
+}
+.content-container > .content-preview > img {
+    width: 75%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    align-self: center;
+    margin: 1rem 0;
 }

@@ -6,7 +6,7 @@ document.body.onload = async () => {
     );
     let json = await res.json();
     let date = new Date(json.published);
-    console.log(json);
+    document.title = `${json.title} | ZeroToOne`
     ARTICLE.innerHTML += `<div class="article-info">
     <p class="author">Published By ${json.author} on ${date.getDate()}-${
         date.getMonth() + 1
