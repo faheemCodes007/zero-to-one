@@ -69,6 +69,7 @@ div.app {
     outline: none;
     border: none;
     width: 100%;
+    font-family: "RobotoSlab";
 }
 .app > .input-container:last-child > input {
     border: 1px solid rgba(200, 200, 200, 0.6);
@@ -110,7 +111,7 @@ body > .content-tools {
     left: 50%;
     background-color: #ffc017;
     border-radius: 1rem;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     transform: translate(-50%);
 }
 body > .content-tools > i {
@@ -118,7 +119,7 @@ body > .content-tools > i {
     font-size: 30px;
     cursor: pointer;
     vertical-align: middle;
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 5px;
 }
 body > .content-tools > i:hover {
@@ -143,6 +144,7 @@ body > .content-tools > i:hover {
     color: black;
     font-size: 1.3rem;
     outline: none;
+    margin: 0.5rem 0;
 }
 .content-container > .content-preview > img {
     width: 75%;
